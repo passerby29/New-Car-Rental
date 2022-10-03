@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NewCarRental</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_home">Главная</string>
+    <string name="title_dashboard">Меню</string>
+    <string name="title_notifications">Профиль</string>
+    <string name="name">Octane Club</string>
+</resources>

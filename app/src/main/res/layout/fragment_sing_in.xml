@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".login.SingInFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/number_til"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:scrollbarSize="25dp"
+        android:textColorHint="@color/additional_main"
+        app:boxBackgroundMode="none"
+        app:boxStrokeColor="@color/additional_main"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:hintTextColor="@color/additional_main">
+
+        <com.santalu.maskara.widget.MaskEditText
+            android:id="@+id/number_et"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/item_edittext_style"
+            android:fontFamily="@font/oranienbaum"
+            android:gravity="center_vertical"
+            android:hint="Номер телефона"
+            android:inputType="phone"
+            android:paddingStart="12dp"
+            android:textColor="@color/additional_main"
+            android:textColorHighlight="@color/background_main"
+            android:textColorHint="@color/additional_main"
+            android:textColorLink="@color/background_main"
+            android:textSize="20sp"
+            app:mask="+7(###) ###-##-##"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_til"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:scrollbarSize="25dp"
+        android:textColorHint="@color/additional_main"
+        app:boxBackgroundMode="none"
+        app:boxStrokeColor="@color/additional_main"
+        app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:hintTextColor="@color/additional_main">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_et"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/item_edittext_style"
+            android:fontFamily="@font/oranienbaum"
+            android:gravity="center_vertical"
+            android:hint="Пароль"
+            android:inputType="textPassword"
+            android:paddingStart="12dp"
+            android:textColor="@color/additional_main"
+            android:textColorHighlight="@color/background_main"
+            android:textColorHint="@color/additional_main"
+            android:textColorLink="@color/background_main"
+            android:textSize="20sp"
+            tools:ignore="TouchTargetSizeCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>
