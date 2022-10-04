@@ -4,19 +4,175 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".menu.ui.profile.NotificationsFragment">
+    android:background="@color/background_main"
+    tools:context=".menu.ui.profile.ProfileFragment">
 
-    <TextView
-        android:id="@+id/text_notifications"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/item_header_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="2dp"
+        android:paddingStart="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/profile_header_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Муратов Юсуф"
+            android:textColor="@color/background_main"
+            android:textSize="28sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_profile_img_background"
+            android:src="@drawable/ic_profile2" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="72dp"
+        android:text="Ваши бронирования"
+        android:textColor="@color/additional_main"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@color/additional_main"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="У вас ещё нет бронирований"
+            android:textColor="#6622333B"
+            android:textSize="32sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/profile_rv1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/profile_contacts_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/item_btns_style"
+        android:drawableEnd="@drawable/ic_contacts"
+        android:drawablePadding="4dp"
+        android:drawableTint="@color/background_main"
+        android:fontFamily="@font/oranienbaum"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="Контакты"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/background_main"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline13"
+        app:layout_constraintStart_toStartOf="@id/cardView2"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/profile_favorites_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/item_btns_style"
+        android:drawableEnd="@drawable/ic_favorite_filled"
+        android:drawablePadding="4dp"
+        android:drawableTint="@color/background_main"
+        android:fontFamily="@font/oranienbaum"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="Избранное"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/background_main"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/cardView2"
+        app:layout_constraintStart_toStartOf="@+id/guideline13"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/item_btns_style"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline13"
+        app:layout_constraintStart_toStartOf="@+id/cardView2"
+        app:layout_constraintTop_toBottomOf="@+id/profile_contacts_btn">
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/profile_language_switch"
+            style="Widget.Material3.CompoundButton.MaterialSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Русский язык"
+            android:textColor="@color/background_main"
+            android:textSize="16sp"
+            android:thumbTint="@color/additional_main"
+            app:thumbTint="@color/additional_main"
+            app:trackTint="@color/background_main" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/profile_logout_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/item_btns_style"
+        android:drawableEnd="@drawable/ic_logout"
+        android:fontFamily="@font/oranienbaum"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="Покинуть аккаунт"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="#834646"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/cardView2"
+        app:layout_constraintStart_toStartOf="@+id/guideline13"
+        app:layout_constraintTop_toBottomOf="@+id/profile_favorites_btn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

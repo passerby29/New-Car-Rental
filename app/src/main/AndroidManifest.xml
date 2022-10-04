@@ -15,6 +15,13 @@
         android:theme="@style/Theme.NewCarRental"
         tools:targetApi="31">
         <activity
+            android:name=".favorites.FavoritesActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".order.OrderActivity"
             android:exported="false">
             <meta-data

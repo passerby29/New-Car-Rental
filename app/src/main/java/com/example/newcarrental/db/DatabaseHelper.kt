@@ -52,18 +52,26 @@ class DatabaseHelper internal constructor(private val myContext: Context) :
 
     companion object {
         private lateinit var DB_PATH: String
-        private const val DB_NAME = "car_rental2.db"
+        private const val DB_NAME = "car_rental3.db"
         private const val SCHEMA = 1
         const val TABLE_C = "cars"
+        const val TABLE_U = "users"
+        const val TABLE_O = "orders"
+        const val TABLE_F = "favorites"
 
         //table cars
         const val COLUMN_ID_C = "_id"
-        const val COLUMN_ID_I = "image"
-        const val COLUMN_ID_N = "name"
-        const val COLUMN_ID_P = "price"
-        const val COLUMN_ID_HP = "horse_power"
-        const val COLUMN_ID_AC = "acceleration"
-        const val COLUMN_ID_Y = "year"
+        const val COLUMN_I_C = "image"
+        const val COLUMN_N_C = "name"
+        const val COLUMN_P_C = "price"
+        const val COLUMN_HP_C = "horse_power"
+        const val COLUMN_AC_C = "acceleration"
+        const val COLUMN_Y_C = "year"
+
+        //table favorites
+        const val COLUMN_ID_F = "_id"
+        const val COLUMN_C_ID_F = "car_id"
+        const val COLUMN_U_ID_F = "user_id"
     }
 
     init {

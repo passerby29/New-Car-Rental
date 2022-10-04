@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.NewCarRental" parent="Theme.AppCompat.DayNight.DarkActionBar">
+    <style name="Theme.NewCarRental" parent="Theme.Material3.Light">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/background_main</item>
         <item name="colorPrimaryVariant">@color/background_main</item>
@@ -16,6 +16,7 @@
         <item name="android:navigationBarColor">@color/background_main</item>
 
         <item name="fontFamily">@font/oranienbaum</item>
+
     </style>
 
     <style name="divider">
@@ -34,5 +35,33 @@
         <item name="iconPadding">0dp</item>
         <item name="iconGravity">textStart</item>
         <item name="iconSize">32dp</item>
+    </style>
+
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="titleCentered">true</item>
+        <item name="colorAccent">@color/additional_main</item>
+        <item name="android:textColorPrimary">@color/additional_main</item>
+        <item name="android:windowBackground">@drawable/item_alert_background</item>
+    </style>
+
+    <style name="activeIndicator">
+        <item name="android:color">@color/background_main</item>
+    </style>
+
+    <style name="DialogAlert">
+        <item name="materialAlertDialogTitlePanelStyle">
+            @style/MaterialAlertDialog.Material3.Title.Panel.CenterStacked
+        </item>
+        <item name="materialAlertDialogTitleIconStyle">
+            @style/MaterialAlertDialog.Material3.Title.Icon.CenterStacked
+        </item>
+        <item name="materialAlertDialogTitleTextStyle">
+            @style/MaterialAlertDialog.Material3.Title.Text.CenterStacked
+        </item>
+        <item name="colorPrimary">@color/additional_main</item>
+        <item name="tint">@color/additional_main</item>
+        <item name="colorSurface">@color/background_main</item>
+        <item name="colorOnSurface">@color/additional_main</item>
+        <item name="colorOnSurfaceVariant">@color/additional_main</item>
     </style>
 </resources>

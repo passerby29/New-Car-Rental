@@ -89,7 +89,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/main_sign_in_btn"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
@@ -108,7 +108,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/add_sign_up_btn"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
@@ -128,7 +128,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/main_sign_up_btn"
         android:layout_width="wrap_content"
         android:layout_height="36dp"
@@ -147,7 +147,7 @@
         app:layout_constraintTop_toTopOf="@+id/main_sign_in_btn"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/add_sign_in_btn"
         android:layout_width="wrap_content"
         android:layout_height="36dp"
