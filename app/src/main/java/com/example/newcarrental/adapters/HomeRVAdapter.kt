@@ -20,7 +20,7 @@ class HomeRVAdapter(context: Context, resource: Int, cars: List<CarsModel>) :
     lateinit var clickListener: HomeItemClickListener
 
     interface HomeItemClickListener {
-        fun showOrder(name: String)
+        fun showOrder(position: Int)
     }
 
     init {
@@ -57,10 +57,10 @@ class HomeRVAdapter(context: Context, resource: Int, cars: List<CarsModel>) :
             holder.carTime.text = carsElements.acceleration_.toString()
             holder.carPrice.text = carsElements.price_.toString()
         }
-        holder.carImage.setOnClickListener { clickListener.showOrder(carsElements.name) }
-        holder.carName.setOnClickListener { clickListener.showOrder(carsElements.name) }
-        holder.carHP.setOnClickListener { clickListener.showOrder(carsElements.name) }
-        holder.carTime.setOnClickListener { clickListener.showOrder(carsElements.name) }
-        holder.carPrice.setOnClickListener { clickListener.showOrder(carsElements.name) }
+        holder.carImage.setOnClickListener { clickListener.showOrder(position) }
+        holder.carName.setOnClickListener { clickListener.showOrder(position) }
+        holder.carHP.setOnClickListener { clickListener.showOrder(position) }
+        holder.carTime.setOnClickListener { clickListener.showOrder(position) }
+        holder.carPrice.setOnClickListener { clickListener.showOrder(position) }
     }
 }

@@ -21,7 +21,7 @@ class CatalogRVAdapter(context: Context, resource: Int, cars: List<CarsModel>) :
     lateinit var clickListener: CatalogItemClickListener
 
     interface CatalogItemClickListener {
-        fun showOrder(name: String)
+        fun showOrder(position: Int)
     }
 
     init {
@@ -62,13 +62,13 @@ class CatalogRVAdapter(context: Context, resource: Int, cars: List<CarsModel>) :
             holder.carAcc.text = carsElements.acceleration_.toString()
             holder.carPrice.text = carsElements.price_.toString()
         }
-        holder.carImage.setOnClickListener { clickListener.showOrder(carsElements.name) }
-        holder.carName.setOnClickListener { clickListener.showOrder(carsElements.name) }
-        holder.carHP.setOnClickListener { clickListener.showOrder(carsElements.name) }
-        holder.carYear.setOnClickListener { clickListener.showOrder(carsElements.name) }
-        holder.carAcc.setOnClickListener { clickListener.showOrder(carsElements.name) }
-        holder.carPrice.setOnClickListener { clickListener.showOrder(carsElements.name) }
-        holder.more.setOnClickListener { clickListener.showOrder(carsElements.name) }
-        holder.container.setOnClickListener { clickListener.showOrder(carsElements.name) }
+        holder.carImage.setOnClickListener { clickListener.showOrder(position) }
+        holder.carName.setOnClickListener { clickListener.showOrder(position) }
+        holder.carHP.setOnClickListener { clickListener.showOrder(position) }
+        holder.carYear.setOnClickListener { clickListener.showOrder(position) }
+        holder.carAcc.setOnClickListener { clickListener.showOrder(position) }
+        holder.carPrice.setOnClickListener { clickListener.showOrder(position) }
+        holder.more.setOnClickListener { clickListener.showOrder(position) }
+        holder.container.setOnClickListener { clickListener.showOrder(position) }
     }
 }

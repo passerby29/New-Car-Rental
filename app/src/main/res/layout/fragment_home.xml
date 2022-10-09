@@ -39,7 +39,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/item_menu_tv_background"
         android:gravity="center"
-        android:text="Самые популярные модели"
+        android:text="@string/popular"
         android:textColor="@color/background_main"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/guide2"

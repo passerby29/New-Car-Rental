@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".login.SingInFragment">
+    tools:context=".login.SignInFragment">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/number_til"
+        android:id="@+id/log_number_til"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -20,13 +20,13 @@
         app:hintTextColor="@color/additional_main">
 
         <com.santalu.maskara.widget.MaskEditText
-            android:id="@+id/number_et"
+            android:id="@+id/log_number_et"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/item_edittext_style"
             android:fontFamily="@font/oranienbaum"
             android:gravity="center_vertical"
-            android:hint="Номер телефона"
+            android:hint="@string/your_number"
             android:inputType="phone"
             android:paddingStart="12dp"
             android:textColor="@color/additional_main"
@@ -34,31 +34,33 @@
             android:textColorHint="@color/additional_main"
             android:textColorLink="@color/background_main"
             android:textSize="20sp"
-            app:mask="+7(###) ###-##-##"
+            app:mask="+#(###) ###-##-##"
             tools:ignore="TouchTargetSizeCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/password_til"
+        android:id="@+id/log_password_til"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:scrollbarSize="25dp"
         android:textColorHint="@color/additional_main"
         app:boxBackgroundMode="none"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/additional_main"
         app:boxStrokeColor="@color/additional_main"
         app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
         app:hintTextColor="@color/additional_main">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password_et"
+            android:id="@+id/log_password_et"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/item_edittext_style"
             android:fontFamily="@font/oranienbaum"
             android:gravity="center_vertical"
-            android:hint="Пароль"
+            android:hint="@string/your_password"
             android:inputType="textPassword"
             android:paddingStart="12dp"
             android:textColor="@color/additional_main"

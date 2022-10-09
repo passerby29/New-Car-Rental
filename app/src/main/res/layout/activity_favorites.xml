@@ -33,17 +33,35 @@
         android:background="@drawable/item_header_background"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
-        android:text="Избранное"
+        android:text="@string/favorites"
         android:textColor="@color/background_main"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/favorites_empty_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="@string/empty_favorites"
+        android:textColor="#EAE0D5"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/favorites_rv_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="visible"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"

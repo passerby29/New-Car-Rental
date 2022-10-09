@@ -17,4 +17,5 @@
     <color name="card_fill">#E3E3E3</color>
     <color name="divider">#9922333B</color>
     <color name="additional_text">#EAE0D5</color>
+    <color name="error_main_color">#834646</color>
 </resources>

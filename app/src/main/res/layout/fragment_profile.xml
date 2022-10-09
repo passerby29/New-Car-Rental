@@ -11,7 +11,9 @@
         android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/item_header_background"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -26,9 +28,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="Муратов Юсуф"
             android:textColor="@color/background_main"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:text="Муратов Юсуф" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
@@ -43,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="72dp"
-        android:text="Ваши бронирования"
+        android:text="@string/your_bookings"
         android:textColor="@color/additional_main"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +58,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
+        android:padding="16dp"
         android:backgroundTint="@color/additional_main"
         app:cardCornerRadius="8dp"
         app:cardElevation="0dp"
@@ -64,19 +67,24 @@
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <TextView
+            android:id="@+id/profile_order_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
             android:gravity="center"
-            android:text="У вас ещё нет бронирований"
+            android:text="@string/dont_have_bookings"
             android:textColor="#6622333B"
-            android:textSize="32sp" />
+            android:textSize="32sp"
+            android:visibility="gone" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/profile_rv1"
+            android:id="@+id/profile_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal" />
+            android:orientation="horizontal"
+            android:visibility="invisible"/>
     </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.Guideline
@@ -99,7 +107,7 @@
         android:fontFamily="@font/oranienbaum"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
-        android:text="Контакты"
+        android:text="@string/contacts"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textColor="@color/background_main"
@@ -121,7 +129,7 @@
         android:fontFamily="@font/oranienbaum"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
-        android:text="Избранное"
+        android:text="@string/favorites"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textColor="@color/background_main"
@@ -148,7 +156,8 @@
             style="Widget.Material3.CompoundButton.MaterialSwitch"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Русский язык"
+            android:checked="false"
+            android:text="@string/language"
             android:textColor="@color/background_main"
             android:textSize="16sp"
             android:thumbTint="@color/additional_main"
@@ -167,10 +176,10 @@
         android:fontFamily="@font/oranienbaum"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
-        android:text="Покинуть аккаунт"
+        android:text="@string/logout"
         android:textAlignment="textStart"
         android:textAllCaps="false"
-        android:textColor="#834646"
+        android:textColor="@color/error_main_color"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@id/cardView2"
         app:layout_constraintStart_toStartOf="@+id/guideline13"

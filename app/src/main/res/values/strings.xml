@@ -1,10 +1,59 @@
 <resources>
     <string name="app_name">NewCarRental</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_menu">MenuActivity</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="title_activity_menu" translatable="false">MenuActivity</string>
     <string name="title_home">Главная</string>
     <string name="title_dashboard">Меню</string>
     <string name="title_notifications">Профиль</string>
-    <string name="name">Octane Club</string>
+    <string name="name" translatable="false">Octane Club</string>
+    <string name="more">Подробнее</string>
+    <string name="your_name">Ваше имя</string>
+    <string name="your_surname">Ваша фамилия</string>
+    <string name="your_number">Номер телефона</string>
+    <string name="wrong_number">Неправильный номер</string>
+    <string name="your_password">Пароль</string>
+    <string name="wrong_password">Неправильный пароль</string>
+    <string name="your_password_confirm">Подтвердите пароль</string>
+    <string name="your_email">Электронная почта</string>
+    <string name="your_bookings">Ваши бронирования</string>
+    <string name="dont_have_bookings">У вас ещё нет бронирований</string>
+    <string name="contacts">Контакты</string>
+    <string name="favorites">Избранное</string>
+    <string name="language">Русский язык</string>
+    <string name="logout">Покинуть аккаунт</string>
+    <string name="crossovers">Внедорожники</string>
+    <string name="sedans">Седаны</string>
+    <string name="sportcars">Спорткары</string>
+    <string name="cabriolets">Кабриолеты</string>
+    <string name="popular">Самые популярные модели</string>
+    <string name="features">Особенности</string>
+    <string name="engine_power">Мощность двигателя</string>
+    <string name="max_speed">Максимальная скорость</string>
+    <string name="acceleration">Разгон 0-100 км/ч</string>
+    <string name="rent_car">Арендовать\nавтомобиль</string>
+    <string name="all_field">Все поля должны быть заполнены</string>
+    <string name="short_password_and_phone">Пароль должен быть не менее 5 символов. Номер должен состоять из 11 цифр.</string>
+    <string name="user_exists_number">Пользователь с таким номером телефона уже существует</string>
+    <string name="user_exists_email">Пользователь с такой электронной почтой уже существует</string>
+    <string name="reg_success">Вы успешно зарегистрировались</string>
+    <string name="authorization">Авторизация</string>
+    <string name="sign_in">Войти</string>
+    <string name="registration">Регистрация</string>
+    <string name="max_days_title">Слишком большой срок аренды</string>
+    <string name="max_days_body">Для аренды на срок более 60 дней, свяжитесь с менеджером по номеру +7(777) 777–77–77</string>
+    <string name="phonelink_title">Мы вам перезвоним</string>
+    <string name="phonelink_body">Ожидайте звонка в ближайшее время. Наш менеджер с вами свяжется.</string>
+    <string name="rent_tilte">Заявка принята</string>
+    <string name="rent_body">Наш менеджер свяжется с вами для подтверждения бронирования.Также после подтверждения информация появится на вашей электронной почте</string>
+    <string name="contacts_body">Вы можете связаться с менеджером по номеру +7(777) 777-77-77. Или же приехать к наc в офис по адресам: \n\t\tМосква: ул. Новый Арбат, 36, стр. 3 \n\t\tСочи: Автодром Сочи, ул. Триумфальная, д. 26.\n\t\tЕкатеринбург: ул. Бориса Ельцина – 3, Паркинг сектор Б.\nВ любой день недели с 9:00 до 21:00</string>
+    <string name="contacts_title">Контакты</string>
+    <string name="empty_favorites">В ваших избранных\nпока пусто</string>
+    <string name="day">день</string>
+    <string name="days">дней</string>
+    <string name="h_p">л.с.</string>
+    <string name="km_h">км/ч</string>
+    <string name="sec">сек</string>
+    <string name="year">год</string>
+    <string name="warning_title">Ошибка выбора даты</string>
+    <string name="warning_body">Вы не можете выбрать дату раньше текущей</string>
 </resources>

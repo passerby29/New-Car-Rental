@@ -67,7 +67,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:text="Внедорожники"
+                            android:text="@string/crossovers"
                             android:textColor="@color/additional_main"
                             android:textSize="26sp" />
 
@@ -115,7 +115,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:text="Седаны"
+                            android:text="@string/sedans"
                             android:textColor="@color/additional_main"
                             android:textSize="26sp" />
 
@@ -163,7 +163,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:text="Спорткары"
+                            android:text="@string/sportcars"
                             android:textColor="@color/additional_main"
                             android:textSize="26sp" />
 
@@ -211,7 +211,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
-                            android:text="Кабриолеты"
+                            android:text="@string/cabriolets"
                             android:textColor="@color/additional_main"
                             android:textSize="26sp" />
 

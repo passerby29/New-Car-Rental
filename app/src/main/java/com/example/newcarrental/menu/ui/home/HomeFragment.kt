@@ -19,14 +19,13 @@ import com.example.newcarrental.models.CarsModel
 import com.example.newcarrental.order.OrderActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 
-//TODO исправить бэкграунд
 class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val inflater = TransitionInflater.from(requireContext())
-        exitTransition = inflater.inflateTransition(R.transition.slide_right)
-        enterTransition = inflater.inflateTransition(R.transition.slide_right)
+        exitTransition = inflater.inflateTransition(R.transition.slide_out_top)
+        enterTransition = inflater.inflateTransition(R.transition.slide_out_top)
     }
 
     private var _binding: FragmentHomeBinding? = null
@@ -45,39 +44,43 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-    var cars: ArrayList<CarsModel> = ArrayList()
-    var sqlHelper: DatabaseHelper? = null
-    var db: SQLiteDatabase? = null
+    private var cars: ArrayList<CarsModel> = ArrayList()
+    private var sqlHelper: DatabaseHelper? = null
+    private var db: SQLiteDatabase? = null
     private lateinit var carsCursor: Cursor
-    lateinit var carImages: Array<String?>
-    lateinit var carNames: Array<String?>
-    lateinit var carPrices: Array<String?>
-    lateinit var carHPs: Array<String?>
-    lateinit var carYears: Array<String?>
-    lateinit var carAcs: Array<String?>
-    var columnIndexImage: Int = 0
-    var columnIndexName: Int = 0
-    var columnIndexPrice: Int = 0
-    var columnIndexHP: Int = 0
-    var columnIndexYear: Int = 0
-    var columnIndexAc: Int = 0
+    private lateinit var carIds: Array<String?>
+    private lateinit var carImages: Array<String?>
+    private lateinit var carNames: Array<String?>
+    private lateinit var carPrices: Array<String?>
+    private lateinit var carHPs: Array<String?>
+    private lateinit var carYears: Array<String?>
+    private lateinit var carAcs: Array<String?>
+    private var columnIndexId: Int = 0
+    private var columnIndexImage: Int = 0
+    private var columnIndexName: Int = 0
+    private var columnIndexPrice: Int = 0
+    private var columnIndexHP: Int = 0
+    private var columnIndexYear: Int = 0
+    private var columnIndexAc: Int = 0
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sqlHelper = DatabaseHelper(requireContext())
         sqlHelper!!.createDB()
         db = sqlHelper!!.open()
-        for (i in 0 until 4) {
-            carsCursor = db!!.rawQuery(
-                "select * from ${DatabaseHelper.TABLE_C} where _id = '1'", null
-            )
+        carsCursor = db!!.rawQuery(
+            "select * from ${DatabaseHelper.TABLE_C}", null
+        )
+        for (i in 0 until 5) {
 
+            columnIndexId = carsCursor.getColumnIndex("_id")
             columnIndexImage = carsCursor.getColumnIndex("image")
             columnIndexName = carsCursor.getColumnIndex("name")
             columnIndexPrice = carsCursor.getColumnIndex("price")
             columnIndexHP = carsCursor.getColumnIndex("horse_power")
             columnIndexYear = carsCursor.getColumnIndex("year")
             columnIndexAc = carsCursor.getColumnIndex("acceleration")
+            carIds = arrayOfNulls(carsCursor.count)
             carImages = arrayOfNulls(carsCursor.count)
             carNames = arrayOfNulls(carsCursor.count)
             carPrices = arrayOfNulls(carsCursor.count)
@@ -86,7 +89,8 @@ class HomeFragment : Fragment() {
             carAcs = arrayOfNulls(carsCursor.count)
 
             if (carsCursor.moveToFirst()) {
-                for (i in 0 until carsCursor.count) {
+                for (i in 0 until 5) {
+                    carIds[i] = carsCursor.getString(columnIndexId).toString()
                     carImages[i] = carsCursor.getString(columnIndexImage).toString()
                     carNames[i] = carsCursor.getString(columnIndexName).toString()
                     carPrices[i] = carsCursor.getString(columnIndexPrice).toString()
@@ -98,12 +102,13 @@ class HomeFragment : Fragment() {
             }
             cars.add(
                 CarsModel(
-                    carImages[0].toString(),
-                    carNames[0].toString(),
-                    carPrices[0]!!.toInt(),
-                    carHPs[0]!!.toInt(),
-                    carYears[0]!!.toInt(),
-                    carAcs[0]!!.toDouble()
+                    carIds[i].toString(),
+                    carImages[i].toString(),
+                    carNames[i].toString(),
+                    StringBuilder().append("\u20bd").append(carPrices[i]).toString(),
+                    StringBuilder().append(carHPs[i]).append(" ").append(getString(R.string.h_p)).toString(),
+                    carYears[i].toString(),
+                    StringBuilder().append(carAcs[i]).append(" ").append(getString(R.string.sec)).toString()
                 )
             )
         }
@@ -127,10 +132,12 @@ class HomeFragment : Fragment() {
     }
 
     private val itemClickListener = object : HomeRVAdapter.HomeItemClickListener {
-        override fun showOrder(name: String) {
+        override fun showOrder(position: Int) {
+            var pos = position + 1
             val intent = Intent(requireContext(), OrderActivity::class.java)
+            intent.putExtra("carId", pos.toString())
             startActivity(intent)
-            activity?.overridePendingTransition(R.anim.slide_in_left, android.R.anim.fade_out)
+            activity?.overridePendingTransition(R.anim.fade_in, R.anim.slide_out_bottom)
         }
     }
 }

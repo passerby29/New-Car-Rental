@@ -20,7 +20,7 @@ class CategoryRVAdapter(context: Context, resource: Int, cars: List<CarsModel>) 
     lateinit var clickListener: CategoryItemClickListener
 
     interface CategoryItemClickListener {
-        fun showOrder(name: String)
+        fun showOrder(position: Int)
     }
 
     init {
@@ -53,8 +53,8 @@ class CategoryRVAdapter(context: Context, resource: Int, cars: List<CarsModel>) 
             holder.carName.text = carsElements.name
             holder.carPrice.text = carsElements.price_.toString()
         }
-        holder.carImage.setOnClickListener { clickListener.showOrder(carsElements.name) }
-        holder.carName.setOnClickListener { clickListener.showOrder(carsElements.name) }
-        holder.carPrice.setOnClickListener { clickListener.showOrder(carsElements.name) }
+        holder.carImage.setOnClickListener { clickListener.showOrder(position) }
+        holder.carName.setOnClickListener { clickListener.showOrder(position) }
+        holder.carPrice.setOnClickListener { clickListener.showOrder(position) }
     }
 }
